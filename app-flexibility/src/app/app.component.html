@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>App Flexibility</mat-card-title>
+    <mat-card-subtitle>Test</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <mat-form-field class="weight">
+        <mat-label>Weight (lbs)</mat-label>
+        <input 
+          matInput 
+          type="number" 
+          name="weight"
+          [(ngModel)]="weight" />
+      </mat-form-field>
+      <mat-form-field class="size">
+        <mat-label>Size</mat-label>
+        <input 
+          matInput 
+          type="number" 
+          name="size" 
+          [(ngModel)]="size" />
+      </mat-form-field>
+      <label id="gender-label">Pick your gender:</label>
+      <mat-radio-group 
+        aria-label="Select an option"
+        name="gender" 
+        [(ngModel)]="gender">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button value="2">Female</mat-radio-button>
+      </mat-radio-group>
+      <button mat-raised-button (click)="sendData()">Send</button>
+    </form>
+  </mat-card-content>
+</mat-card>
