@@ -1,0 +1,67 @@
+.light-logo {
+  color: #fff;
+}
+
+.test {
+  padding: 0.5em 0.5em;
+}
+
+.container {
+  padding: 2.5em;
+}
+
+.custom-btn {
+  background-color: #4caf50; /* Cambia el color de fondo */
+  color: white; /* Cambia el color del texto */
+  border-radius: 20px; /* Ajusta el radio del borde */
+  padding: 10px 20px; /* Ajusta el relleno del botón */
+  font-size: 16px; /* Ajusta el tamaño del texto */
+  transition: background-color 0.3s; /* Agrega una transición suave al cambio de color de fondo */
+}
+
+.custom-btn:hover {
+  background-color: #45a049; /* Cambia el color de fondo cuando se pasa el ratón por encima */
+}
+
+.custom-btn:active {
+  background-color: #3e8e41; /* Cambia el color de fondo cuando el botón está activo (presionado) */
+}
+
+.mat-table-sticky {
+  border-top: 1px solid #e0e0e0;
+}
+
+.fixed-header {
+  height: 250px;
+  overflow: auto;
+}
+
+.table-responsive {
+  .custom-table {
+    width: 100%; /* Ajusta el ancho de la tabla al 100% del contenedor */
+    border-collapse: collapse; /* Fusiona los bordes de las celdas */
+  }
+
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #380fdd; /* Agrega bordes a las celdas */
+    padding: 8px; /* Ajusta el relleno interior de las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+
+  .custom-table th {
+    background-color: #f2f2f2; /* Establece un color de fondo para las celdas del encabezado */
+    color: #333333; /* Establece el color del texto en el encabezado */
+  }
+
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Establece un color de fondo alternativo para las filas pares */
+  }
+
+  .custom-table tbody tr:hover {
+    background-color: #dddddd; /* Cambia el color de fondo cuando se pasa el ratón por encima de una fila */
+  }
+}
+table {
+  width: 100%;
+}
