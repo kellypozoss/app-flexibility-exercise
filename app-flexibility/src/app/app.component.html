@@ -1,35 +1,446 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>App Flexibility</mat-card-title>
-    <mat-card-subtitle>Test</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <form>
-      <mat-form-field class="weight">
-        <mat-label>Weight (lbs)</mat-label>
-        <input 
-          matInput 
-          type="number" 
-          name="weight"
-          [(ngModel)]="weight" />
-      </mat-form-field>
-      <mat-form-field class="size">
-        <mat-label>Size</mat-label>
-        <input 
-          matInput 
-          type="number" 
-          name="size" 
-          [(ngModel)]="size" />
-      </mat-form-field>
-      <label id="gender-label">Pick your gender:</label>
-      <mat-radio-group 
-        aria-label="Select an option"
-        name="gender" 
-        [(ngModel)]="gender">
-        <mat-radio-button value="1">Male</mat-radio-button>
-        <mat-radio-button value="2">Female</mat-radio-button>
-      </mat-radio-group>
-      <button mat-raised-button (click)="sendData()">Send</button>
-    </form>
-  </mat-card-content>
-</mat-card>
+<mat-toolbar color="primary" class="topbar relative">
+  <div class="w-100 fix-width-for-horizontal">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <b>
+          <img
+            src="assets/images/logo-light-icon.png"
+            alt="homepage"
+            class="light-logo"
+          />
+        </b>
+      </a>
+    </div>
+  </div>
+</mat-toolbar>
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>App Flexibility</mat-card-title>
+      <mat-card-subtitle>Test</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field class="test">
+          <mat-label>Weight (lbs)</mat-label>
+          <input matInput type="number" name="weight" [(ngModel)]="weight" />
+        </mat-form-field>
+        <mat-form-field class="test">
+          <mat-label>Size</mat-label>
+          <input matInput type="number" name="size" [(ngModel)]="size" />
+        </mat-form-field>
+        <div>
+          <label id="gender-label">Pick your gender:</label>
+          <mat-radio-group
+            aria-label="Select an option"
+            name="gender"
+            [(ngModel)]="gender"
+            class="test"
+          >
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+          </mat-radio-group>
+          <button
+            mat-raised-button
+            color="primary"
+            class="custom-btn"
+            (click)="sendData()"
+          >
+            Send
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="container">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef>Men Size</th>
+          <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="size1">
+          <th mat-header-cell *matHeaderCellDef>0-79 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size1)"
+          >
+            {{ element.size1 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size2">
+          <th mat-header-cell *matHeaderCellDef>80 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size2)"
+          >
+            {{ element.size2 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size3">
+          <th mat-header-cell *matHeaderCellDef>100 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size3)"
+          >
+            {{ element.size3 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size4">
+          <th mat-header-cell *matHeaderCellDef>120 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size4)"
+          >
+            {{ element.size4 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size5">
+          <th mat-header-cell *matHeaderCellDef>140 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size5)"
+          >
+            {{ element.size5 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size6">
+          <th mat-header-cell *matHeaderCellDef>160 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size6)"
+          >
+            {{ element.size6 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size7">
+          <th mat-header-cell *matHeaderCellDef>180 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size7)"
+          >
+            {{ element.size7 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size8">
+          <th mat-header-cell *matHeaderCellDef>200 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size8)"
+          >
+            {{ element.size8 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size9">
+          <th mat-header-cell *matHeaderCellDef>220 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size9)"
+          >
+            {{ element.size9 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size10">
+          <th mat-header-cell *matHeaderCellDef>240 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size10)"
+          >
+            {{ element.size10 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size11">
+          <th mat-header-cell *matHeaderCellDef>260 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size11)"
+          >
+            {{ element.size11 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size12">
+          <th mat-header-cell *matHeaderCellDef>280 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size12)"
+          >
+            {{ element.size12 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size13">
+          <th mat-header-cell *matHeaderCellDef>300 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size13)"
+          >
+            {{ element.size13 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size14">
+          <th mat-header-cell *matHeaderCellDef>320 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size14)"
+          >
+            {{ element.size14 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size15">
+          <th mat-header-cell *matHeaderCellDef>340 lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size15)"
+          >
+            {{ element.size15 }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="size16">
+          <th mat-header-cell *matHeaderCellDef>360+ lbs</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [style.background-color]="getColor(element.size16)"
+          >
+            {{ element.size16 }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of lbs"
+      ></mat-paginator>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="secondDataSource">
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef>Female Size</th>
+        <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="size1">
+        <th mat-header-cell *matHeaderCellDef>0-79 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size1)"
+        >
+          {{ element.size1 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size2">
+        <th mat-header-cell *matHeaderCellDef>80 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size2)"
+        >
+          {{ element.size2 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size3">
+        <th mat-header-cell *matHeaderCellDef>100 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size3)"
+        >
+          {{ element.size3 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size4">
+        <th mat-header-cell *matHeaderCellDef>120 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size4)"
+        >
+          {{ element.size4 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size5">
+        <th mat-header-cell *matHeaderCellDef>140 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size5)"
+        >
+          {{ element.size5 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size6">
+        <th mat-header-cell *matHeaderCellDef>160 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size6)"
+        >
+          {{ element.size6 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size7">
+        <th mat-header-cell *matHeaderCellDef>180 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size7)"
+        >
+          {{ element.size7 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size8">
+        <th mat-header-cell *matHeaderCellDef>200 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size8)"
+        >
+          {{ element.size8 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size9">
+        <th mat-header-cell *matHeaderCellDef>220 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size9)"
+        >
+          {{ element.size9 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size10">
+        <th mat-header-cell *matHeaderCellDef>240 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size10)"
+        >
+          {{ element.size10 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size11">
+        <th mat-header-cell *matHeaderCellDef>260 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size11)"
+        >
+          {{ element.size11 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size12">
+        <th mat-header-cell *matHeaderCellDef>280 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size12)"
+        >
+          {{ element.size12 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size13">
+        <th mat-header-cell *matHeaderCellDef>300 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size13)"
+        >
+          {{ element.size13 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size14">
+        <th mat-header-cell *matHeaderCellDef>320 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size14)"
+        >
+          {{ element.size14 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size15">
+        <th mat-header-cell *matHeaderCellDef>340 lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size15)"
+        >
+          {{ element.size15 }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="size16">
+        <th mat-header-cell *matHeaderCellDef>360+ lbs</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [style.background-color]="getColor(element.size16)"
+        >
+          {{ element.size16 }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of lbs"
+    ></mat-paginator>
+  </div>
+</div>
