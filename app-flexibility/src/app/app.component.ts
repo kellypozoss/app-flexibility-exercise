@@ -41,13 +41,12 @@ export class AppComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<MaleSize>(ELEMENT_DATA)
   secondDataSource = new MatTableDataSource<FemaleSize>(ELEMENTS)
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator
-  paginator2!: MatPaginator
+  @ViewChild('paginator') paginator!: MatPaginator
+  @ViewChild('paginator2') paginator2!: MatPaginator
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator
-    this.secondDataSource.paginator = this.paginator
+    this.secondDataSource.paginator = this.paginator2
   }
 
   constructor() {}

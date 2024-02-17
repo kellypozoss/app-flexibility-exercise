@@ -241,6 +241,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
       <mat-paginator
+        #paginator="matPaginator"
         [pageSizeOptions]="[5, 10, 20]"
         showFirstLastButtons
         aria-label="Select page of lbs"
@@ -438,6 +439,7 @@
     </table>
 
     <mat-paginator
+      #paginator2="matPaginator"
       [pageSizeOptions]="[5, 10, 20]"
       showFirstLastButtons
       aria-label="Select page of lbs"
